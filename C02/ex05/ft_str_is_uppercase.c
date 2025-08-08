@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ablabib <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ablabib <ablabib@student.your42net>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/17 18:41:29 by ablabib           #+#    #+#             */
-/*   Updated: 2024/07/17 18:41:31 by ablabib          ###   ########.fr       */
+/*   Created: 2024/06/30 18:32:35 by ablabib           #+#    #+#             */
+/*   Updated: 2024/06/30 18:32:38 by ablabib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	*ft_range(int min, int max)
+int	ft_str_is_uppercase(char *str)
 {
-	int	*dest;
-	int	len;
 	int	i;
 
-	if (min >= max)
-		return (NULL);
-	len = max - min;
-	dest = (int *)malloc(sizeof(int) * len);
-	if (!dest)
-		return (NULL);
 	i = 0;
-	while (i < len)
+	while (str[i] != '\0')
 	{
-		dest[i] = min + i;
+		if (!(str[i] >= 'A' && str[i] <= 'Z'))
+		{
+			return (0);
+		}
 		i++;
 	}
-	return (dest);
+	return (1);
 }

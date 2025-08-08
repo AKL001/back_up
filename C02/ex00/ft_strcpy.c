@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ablabib <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ablabib <ablabib@student.your42net>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/17 18:41:29 by ablabib           #+#    #+#             */
-/*   Updated: 2024/07/17 18:41:31 by ablabib          ###   ########.fr       */
+/*   Created: 2024/06/30 16:16:19 by ablabib           #+#    #+#             */
+/*   Updated: 2024/06/30 16:16:51 by ablabib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-
-int	*ft_range(int min, int max)
+char	*ft_strcpy(char *dest, char *src)
 {
-	int	*dest;
-	int	len;
 	int	i;
 
-	if (min >= max)
-		return (NULL);
-	len = max - min;
-	dest = (int *)malloc(sizeof(int) * len);
-	if (!dest)
-		return (NULL);
 	i = 0;
-	while (i < len)
+	while (src[i] != '\0')
 	{
-		dest[i] = min + i;
+		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }

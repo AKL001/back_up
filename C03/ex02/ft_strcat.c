@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ablabib <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ablabib <ablabib@student.your42net>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/17 18:41:29 by ablabib           #+#    #+#             */
-/*   Updated: 2024/07/17 18:41:31 by ablabib          ###   ########.fr       */
+/*   Created: 2024/07/02 10:49:15 by ablabib           #+#    #+#             */
+/*   Updated: 2024/07/02 10:50:41 by ablabib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	*ft_range(int min, int max)
+char	*ft_strcat(char *dest, char *src)
 {
-	int	*dest;
-	int	len;
-	int	i;
+	unsigned int	i;
+	unsigned int	j;
 
-	if (min >= max)
-		return (NULL);
-	len = max - min;
-	dest = (int *)malloc(sizeof(int) * len);
-	if (!dest)
-		return (NULL);
 	i = 0;
-	while (i < len)
+	while (dest[i] != '\0')
 	{
-		dest[i] = min + i;
 		i++;
 	}
+	j = 0;
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
 	return (dest);
 }

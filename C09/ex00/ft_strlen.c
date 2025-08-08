@@ -1,40 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablabib <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/27 18:21:27 by ablabib           #+#    #+#             */
-/*   Updated: 2024/06/29 16:09:29 by ablabib          ###   ########.fr       */
+/*   Created: 2024/07/14 17:03:41 by ablabib           #+#    #+#             */
+/*   Updated: 2024/07/14 17:05:27 by ablabib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void	ft_print_comb(void)
+int	ft_strlen(char *str)
 {
-	int	a;
-	int	b;
-	int	c;
+	int	i;
 
-	a = '0';
-	while (a <= '7')
+	i = 0;
+	while (str[i])
 	{
-		b = a + 1;
-		while (b <= '8')
-		{
-			c = b + 1;
-			while (c <= '9')
-			{
-				write (1, &a, 1);
-				write (1, &b, 1);
-				write (1, &c, 1);
-				if (a != '7')
-					write (1, ", ", 2);
-				c++;
-			}
-			b++;
-		}
-		a++;
+		i++;
 	}
+	return (i);
 }

@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ablabib <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ablabib <ablabib@student.your42net>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/17 18:41:29 by ablabib           #+#    #+#             */
-/*   Updated: 2024/07/17 18:41:31 by ablabib          ###   ########.fr       */
+/*   Created: 2024/07/02 09:20:00 by ablabib           #+#    #+#             */
+/*   Updated: 2024/07/02 09:27:51 by ablabib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	*ft_range(int min, int max)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	*dest;
-	int	len;
-	int	i;
+	unsigned int	i;
 
-	if (min >= max)
-		return (NULL);
-	len = max - min;
-	dest = (int *)malloc(sizeof(int) * len);
-	if (!dest)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	if (n == 0)
 	{
-		dest[i] = min + i;
+		return (0);
+	}
+	i = 0;
+	while (i < n - 1 && s1[i] && s1[i] == s2[i])
+	{
 		i++;
 	}
-	return (dest);
+	return ((unsigned)s1[i] - (unsigned)s2[i]);
 }
